@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Shop.Model"
+             x:Class="Shop.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Login" HorizontalOptions="Center" FontSize="Title" Margin="0,30,0,10" />
+            <Editor Text="{Binding MyLogin.Username}" Placeholder="Email"/>
+            <Editor Text="{Binding MyLogin.Password}" Placeholder="Password"/>
+            <Button Text="LOGIN" HorizontalOptions="Center" Command="{Binding LoginCommand}" />
+            <Button Text="REGISTER" HorizontalOptions="Center" Command= "{Binding RegCommand} "/>
+            
+            <Label FontSize="Large" Text="{Binding LoginText}" HorizontalOptions="Center" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
